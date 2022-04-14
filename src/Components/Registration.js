@@ -9,6 +9,7 @@ const Registration = () => {
     let [address, setAddress] = useState("");
     let [password, setPassword] = useState("");
 
+
     const registrationSubmit = () => {
         var obj = { name: name, phone: phone, email: email, address: address, password: password };
         axios.post("http://127.0.0.1:8000/api/signupSubmit", obj)
@@ -43,5 +44,8 @@ const Registration = () => {
         </div>
 
     )
+
 }
+
+
 export default Registration; 

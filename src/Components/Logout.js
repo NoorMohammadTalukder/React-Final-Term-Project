@@ -34,6 +34,7 @@ const Logout = (props) => {
         //         console.log(err);
         //     });
         window.sessionStorage.setItem("token", "notexists");
+        window.sessionStorage.setItem("email", "");
 
     }
 
@@ -41,7 +42,7 @@ const Logout = (props) => {
     return (
         <div>
             <h1> Logout</h1>
-            <button onClick={logout}>Order</button>
+            <button onClick={logout}>Logout</button>
             {/* <ul>
                 {
                     products.map(p => (

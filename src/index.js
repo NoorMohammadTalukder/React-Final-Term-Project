@@ -74,6 +74,9 @@ ReactDOM.render(
         <Route exact path="/Registration">
           <Registration />
         </Route>
+        <Route exact path="/update">
+          <Update />
+        </Route>
         <Route exact path="/logout">
           <Logout />
         </Route>

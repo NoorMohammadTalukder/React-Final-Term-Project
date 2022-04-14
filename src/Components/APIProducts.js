@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+
 const APIProducts = (props) => {
+
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -9,7 +11,9 @@ const APIProducts = (props) => {
         axios.get("http://127.0.0.1:8000/api/product/list")
             .then(resp => {
                 var a = window.sessionStorage.getItem("token");
+                var email = window.sessionStorage.getItem("email");
                 console.log(a);
+                console.log(email);
                 if (a == "exists") {
                     console.log(resp.data);
                     setProducts(resp.data);
@@ -51,4 +55,5 @@ const APIProducts = (props) => {
         </div>
     )
 }
-export default APIProducts; 
+export default APIProducts;
+

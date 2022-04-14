@@ -26,6 +26,8 @@ const Login = () => {
                 console.log(localStorage.getItem('user'));
                 if (token.token != null) {
                     window.sessionStorage.setItem("token", "exists");
+                    window.sessionStorage.setItem("email", obj.email);
+
                     // req.session.user = token.token;
                     alert("Signin successful");
                     history.push("/allproducts");

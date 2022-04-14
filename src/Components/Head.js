@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Head = () => {
+    var a = window.sessionStorage.getItem("token");
+    // if (a == "exists") {
     return (
         <div>
 
@@ -21,6 +23,8 @@ const Head = () => {
             <Link to="/logout">Logout</Link>
         </div>
     )
+    // }
+
 }
 
 export default Head;
