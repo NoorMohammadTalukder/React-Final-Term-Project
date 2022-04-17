@@ -10,14 +10,15 @@ const APIProducts = (props) => {
         // axios.get("product/list")
         axios.get("http://127.0.0.1:8000/api/product/list")
             .then(resp => {
+                // window.location.reload(false);
                 var a = window.sessionStorage.getItem("token");
                 var email = window.sessionStorage.getItem("email");
                 console.log(a);
                 console.log(email);
-                if (a == "exists") {
-                    console.log(resp.data);
-                    setProducts(resp.data);
-                }
+                // if (a == "exists") {
+                console.log(resp.data);
+                setProducts(resp.data);
+                // }
 
             }).catch(err => {
                 console.log(err);

@@ -22,7 +22,17 @@ const Logout = (props) => {
     // }, []);
     // const cors = require('cors');
     const logout = () => {
-        // var obj = { email: name, password: password };
+        var tokenString = window.sessionStorage.getItem("tokenString");
+        var obj = { tokenString: tokenString };
+        axios.post("http://127.0.0.1:8000/api/logout", obj)
+            .then(resp => {
+                window.sessionStorage.setItem("token", "notexists");
+                window.sessionStorage.setItem("email", "");
+                alert("logout");
+            }).catch(err => {
+                console.log(err);
+                alert(err);
+            });
         // axios.get("http://127.0.0.1:8000/api/my-demo-mail")
         //     .then(resp => {
         //         // var token = resp.data;
@@ -33,8 +43,8 @@ const Logout = (props) => {
         //     }).catch(err => {
         //         console.log(err);
         //     });
-        window.sessionStorage.setItem("token", "notexists");
-        window.sessionStorage.setItem("email", "");
+        // window.sessionStorage.setItem("token", "notexists");
+        // window.sessionStorage.setItem("email", "");
 
     }
 
