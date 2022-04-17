@@ -1,7 +1,16 @@
 import React, { useState, userEffect } from "react";
 import axios from "axios";
+import Head2 from "./Head2"
+import { useHistory } from "react-router-dom";
 
 const Update = () => {
+    let history = useHistory();
+
+    var a = window.sessionStorage.getItem("token");
+    if (a == "notexists") {
+        alert("Kindly login first")
+        history.push("/");
+    }
 
     //let [token, setToken] = useState("");
     let [name, setName] = useState("");
@@ -34,19 +43,24 @@ const Update = () => {
 
 
     return (
-        <div>
-            <h1>Update your Profile</h1>
-            <form>
-                <b>Name:</b><br></br><input type="text" value={name} onChange={(e) => setName(e.target.value)}></input><br></br>
-                <b>Phone:</b><br></br> <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)}></input><br></br>
-                {/* <b>Email:</b> <br></br><input type="text" value={email} onChange={(e) => setEmail(e.target.value)}></input><br></br> */}
-                <b>Address:</b><br></br> <input type="text" value={address} onChange={(e) => setAddress(e.target.value)}></input><br></br>
-                {/* <b>Password:</b> <br></br><input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input><br></br> */}
 
-            </form>
-            <button onClick={updateSubmit}>Update</button>
+        <center>
+            <div>
+                <Head2 />
 
-        </div>
+                <h1>Update your Profile</h1>
+                <form>
+                    <b>Name:</b><br></br><input type="text" value={name} onChange={(e) => setName(e.target.value)}></input><br></br>
+                    <b>Phone:</b><br></br> <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)}></input><br></br>
+                    {/* <b>Email:</b> <br></br><input type="text" value={email} onChange={(e) => setEmail(e.target.value)}></input><br></br> */}
+                    <b>Address:</b><br></br> <input type="text" value={address} onChange={(e) => setAddress(e.target.value)}></input><br></br>
+                    {/* <b>Password:</b> <br></br><input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input><br></br> */}
+
+                </form>
+                <button onClick={updateSubmit}>Update</button>
+
+            </div>
+        </center>
 
     )
 

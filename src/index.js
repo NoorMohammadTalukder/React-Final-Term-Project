@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 // import Contact from './Components/Contact';
 // import Foot from "./Components/Foot";
 import Head from './Components/Head';
+import Dashboard from './Components/Dashboard';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // import ProductDetail from './Components/ProductDetail';
 // import AllPosts from './Components/AllPosts';
@@ -21,6 +22,7 @@ import Registration from './Components/Registration';
 import APIProducts from './Components/APIProducts';
 import Update from './Components/Update';
 import Logout from './Components/Logout';
+import Delete from './Components/Delete';
 import axios from 'axios';
 
 var token = null;
@@ -38,39 +40,15 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     <Router>
-      <Head />
+      {/* <Head /> */}
       <Switch>
         <Route exact path="/">
           <Login />
         </Route>
-        {/* <Route exact path="/profile">
-          <Profile />
-        </Route>
-        <Route exact path="/contact">
-          <Contact />
-        </Route>
-        <Route exact path="/product/:id">
-          <ProductDetail />
-        </Route>
-        <Route exact path="/product/:1">
-          <ProductDetail />
+        <Route exact path="/dash">
+          <Dashboard />
         </Route>
 
-        <Route exact path="/posts">
-          <AllPosts />
-        </Route>
-
-        <Route exact path="/effect">
-          <EffectHookCheck />
-        </Route>
-
-        <Route exact path="/color">
-          <ColorState />
-        </Route> */}
-
-        {/* <Route exact path="/login">
-          <Login />
-        </Route> */}
         <Route exact path="/allproducts">
           <APIProducts />
         </Route>
@@ -79,6 +57,9 @@ ReactDOM.render(
         </Route>
         <Route exact path="/update">
           <Update />
+        </Route>
+        <Route exact path="/delete">
+          <Delete />
         </Route>
         <Route exact path="/logout">
           <Logout />

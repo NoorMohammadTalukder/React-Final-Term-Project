@@ -1,5 +1,6 @@
 import React, { useState, userEffect } from "react";
 import axios from "axios";
+import Head from "./Head"
 
 const Registration = () => {
     //let [token, setToken] = useState("");
@@ -29,19 +30,23 @@ const Registration = () => {
     }
 
     return (
-        <div>
-            <h1>Create Account from here</h1>
-            <form>
-                <b>Name:</b><br></br><input type="text" value={name} onChange={(e) => setName(e.target.value)}></input><br></br>
-                <b>Phone:</b><br></br> <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)}></input><br></br>
-                <b>Email:</b> <br></br><input type="text" value={email} onChange={(e) => setEmail(e.target.value)}></input><br></br>
-                <b>Address:</b><br></br> <input type="text" value={address} onChange={(e) => setAddress(e.target.value)}></input><br></br>
-                <b>Password:</b> <br></br><input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input><br></br>
+        <center>
+            <div>
+                <Head />
 
-            </form>
-            <button onClick={registrationSubmit}>Signup</button>
+                <h1>Create Account from here</h1>
+                <form>
+                    <b>Name:</b><br></br><input type="text" value={name} onChange={(e) => setName(e.target.value)}></input><br></br>
+                    <b>Phone:</b><br></br> <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)}></input><br></br>
+                    <b>Email:</b> <br></br><input type="text" value={email} onChange={(e) => setEmail(e.target.value)}></input><br></br>
+                    <b>Address:</b><br></br> <input type="text" value={address} onChange={(e) => setAddress(e.target.value)}></input><br></br>
+                    <b>Password:</b> <br></br><input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input><br></br>
 
-        </div>
+                </form>
+                <button onClick={registrationSubmit}>Signup</button>
+
+            </div>
+        </center>
 
     )
 

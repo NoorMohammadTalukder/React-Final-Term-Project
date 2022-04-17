@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 // import { BrowserRouter as Redirect } from "react-router-dom";
 // import { Redirect } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
+import Head from './Head';
 // import ReactSession from 'react-client-session';
 
 
@@ -35,7 +36,7 @@ const Login = () => {
                     // req.session.user = token.token;
                     alert("Signin successful");
                     alert(user.access_token);
-                    history.push("/allproducts");
+                    history.push("/dash");
                 }
                 else {
                     alert("Signin unsuccessful");
@@ -54,6 +55,7 @@ const Login = () => {
 
     return (
         <div>
+            <Head />
             <center>
                 <h1>Login from here</h1>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

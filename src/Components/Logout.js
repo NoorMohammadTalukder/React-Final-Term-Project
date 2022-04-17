@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Head2 from "./Head2"
+import { useHistory } from "react-router-dom";
 
 const Logout = (props) => {
+    let history = useHistory();
+    var a = window.sessionStorage.getItem("token");
+    if (a == "notexists") {
+        alert("Kindly login first")
+        history.push("/");
+    }
     // const [products, setProducts] = useState([]);
 
     // useEffect(() => {
@@ -29,6 +37,8 @@ const Logout = (props) => {
                 window.sessionStorage.setItem("token", "notexists");
                 window.sessionStorage.setItem("email", "");
                 alert("logout");
+
+                history.push("/");
             }).catch(err => {
                 console.log(err);
                 alert(err);
@@ -50,17 +60,21 @@ const Logout = (props) => {
 
 
     return (
-        <div>
-            <h1> Logout</h1>
-            <button onClick={logout}>Logout</button>
-            {/* <ul>
+        <center>
+            <div>
+                <Head2 />
+
+                <h1> Logout</h1>
+                <button onClick={logout}>Logout</button>
+                {/* <ul>
                 {
                     products.map(p => (
                         <li key={p.id}>Service id: {p.id} Service Name: {p.name} Price: {p.price} <button onClick={order}>Order</button> </li>
                     ))
                 }
             </ul> */}
-        </div>
+            </div>
+        </center>
     )
 }
 export default Logout; 
